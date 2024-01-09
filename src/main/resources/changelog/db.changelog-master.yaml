@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: changelog/master/2024-01-09-Book.yaml
+  - include:
+      file: changelog/master/2024-01-09-UserAndAuthority.yaml

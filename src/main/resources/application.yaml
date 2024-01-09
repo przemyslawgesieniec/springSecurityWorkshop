@@ -8,6 +8,12 @@ spring:
           github:
             clientId: 8cde85444a324a1eda6f
             clientSecret: 907eab6c58811c9a8aa425be7306f9959d469b55
+            scope:
+              - email
+              - profile
+              - email
+              - address
+              - phone
 
   datasource:
     url: jdbc:postgresql://localhost:5436/postgres
