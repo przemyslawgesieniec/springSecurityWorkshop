@@ -25,7 +25,7 @@ public class SecurityConfiguration {
         http
             .authorizeHttpRequests(
                 (authorize) -> authorize
-                    .anyRequest().permitAll()
+                    .anyRequest().authenticated()
             )
             .formLogin(Customizer.withDefaults())
             .oauth2Login(oauth2 -> oauth2

@@ -10,9 +10,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.Collection;
 import java.util.Set;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class UserEntity implements UserDetails {
     public UserEntity(Set<AuthorityEntity> authorities, String username, String provider, String providerId) {
@@ -23,7 +28,7 @@ public class UserEntity implements UserDetails {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
