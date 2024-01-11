@@ -7,6 +7,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import java.util.Collection;
 import java.util.Set;
@@ -32,6 +33,7 @@ public class UserEntity implements UserDetails {
     private Long id;
 
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @JoinColumn(name="user_entity_id")
     private Set<AuthorityEntity> authorities;
 
     private String password;

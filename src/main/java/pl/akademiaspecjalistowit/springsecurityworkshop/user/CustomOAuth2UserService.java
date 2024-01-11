@@ -43,7 +43,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     private UserEntity registerNewUser(OAuth2UserRequest oAuth2UserRequest,
                                        String username,
                                        String providerId) {
-        AuthorityEntity authorityEntity = new AuthorityEntity("USER");
+        AuthorityEntity authorityEntity = new AuthorityEntity("ROLE_USER");
         UserEntity user = new UserEntity(
             Set.of(authorityEntity),
             username,
