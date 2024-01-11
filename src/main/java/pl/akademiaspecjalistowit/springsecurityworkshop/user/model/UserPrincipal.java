@@ -1,13 +1,19 @@
 package pl.akademiaspecjalistowit.springsecurityworkshop.user.model;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Map;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
+@Getter
 @AllArgsConstructor
-public class UserPrincipal implements OAuth2User {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class UserPrincipal implements OAuth2User, Serializable {
 
     private String email;
     private Map<String, Object> attributes;
